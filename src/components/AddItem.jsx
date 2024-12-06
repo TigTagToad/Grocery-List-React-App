@@ -22,6 +22,7 @@ export default function AddItem({ onAddItem }) {
           onChange={(event) => setNewItem(event.target.value)}
           placeholder="Enter a grocery item"
         />
+        <br></br>
         <button type="submit">Add Item</button>
       </form>
     </div>
