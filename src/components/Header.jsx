@@ -1,8 +1,7 @@
-export default function Header ({title}){
-    
-    return (
-        <>
-        <h1>{title}'s Grocery List</h1>
-        </>
-    )
+export default function Header() {
+  return (
+    <header>
+      <h1>Welcome to your Grocery List</h1>
+    </header>
+  );
 }

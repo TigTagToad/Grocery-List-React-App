@@ -1,24 +1,29 @@
 import { useState } from "react";
 
-export default function AddItem ({setList}) {
-    const [newItem, SetNewItem] = useState("")
+export default function AddItem({ onAddItem }) {
+  const [newItem, setNewItem] = useState("");
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        
-        setList((currList)=>{
-            return [newItem,...currList]
-        });
-        SetNewItem("")
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (newItem.trim()) {
+      onAddItem(newItem);
+      setNewItem("");
     }
+  };
 
-    return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="input">
-                Add New Item:
-                <input id="input" value={newItem} onChange={(event)=>SetNewItem(event.target.value)}/>
-            </label>
-            <button type="submit">Add Item</button>
-        </form>
-    );
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="item">Add Item: </label>
+        <input
+          id="item"
+          type="text"
+          value={newItem}
+          onChange={(event) => setNewItem(event.target.value)}
+          placeholder="Enter a grocery item"
+        />
+        <button type="submit">Add Item</button>
+      </form>
+    </div>
+  );
 }
