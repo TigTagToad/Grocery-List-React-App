@@ -1,7 +1,13 @@
 export default function ResetList({ onResetList }) {
   return (
-    <button type="submit" onClick={onResetList}>
-      Reset List
-    </button>
+    <div className="mt-3">
+      <button
+        type="button"
+        onClick={onResetList}
+        className="btn btn-danger w-100"
+      >
+        Reset List
+      </button>
+    </div>
   );
 }

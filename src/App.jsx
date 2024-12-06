@@ -1,14 +1,20 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
 import GroceryList from "./components/GroceryList";
-import "./css/App.css";
+
 function App() {
   return (
-    <>
+    <div className="d-flex justify-content-center align-items-center min-vh-100 flex-column">
       <Header />
-      <main>
-        <GroceryList />
-      </main>
-    </>
+      <div
+        className="card shadow-lg"
+        style={{ width: "100%", maxWidth: "600px" }}
+      >
+        <div className="card-body">
+          <GroceryList />
+        </div>
+      </div>
+    </div>
   );
 }
 
